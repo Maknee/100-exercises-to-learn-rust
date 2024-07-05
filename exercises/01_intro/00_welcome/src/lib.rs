@@ -17,7 +17,7 @@
 // You can also find solutions to all exercises in the `solutions` git branch.
 fn greeting() -> &'static str {
     // TODO: fix me 👇
-    "I'm ready to __!"
+    "I'm ready to learn Rust!"
 }
 
 // Your solutions will be automatically verified by a set of tests.
@@ -25,7 +25,7 @@ fn greeting() -> &'static str {
 // from the root of this exercise's directory. That's what the `wr` command does for you
 // under the hood.
 //
-// Rust lets you write tests alongside your code.
+// Rust lets you write tests alongside your code.`
 // The `#[cfg(test)]` attribute tells the compiler to only compile the code below when
 // running tests (i.e. when you run `cargo test`).
 // You'll learn more about attributes and testing later in the course.
