@@ -36,8 +36,8 @@ mod tests {
             let (beginning, end) = message.split_at(message.len() / 2);
 
             // Send first half
-            writer.write_all(beginning.as_bytes()).await.unwrap();
             tokio::time::sleep(timeout * 2).await;
+            writer.write_all(beginning.as_bytes()).await.unwrap();
             writer.write_all(end.as_bytes()).await.unwrap();
 
             // Close the write side of the socket

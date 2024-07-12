@@ -1,11 +1,42 @@
 // TODO: Implement `TryFrom<String>` and `TryFrom<&str>` for `Status`.
 //  The parsing should be case-insensitive.
 
+use std::convert::TryFrom;
+
 #[derive(Debug, PartialEq, Clone)]
 enum Status {
     ToDo,
     InProgress,
     Done,
+}
+
+impl TryFrom<String> for Status {
+    type Error = String;
+    fn try_from(s: String) -> Result<Self, Self::Error> {
+        if s.to_lowercase() == "todo" {
+            return Ok(Status::ToDo);
+        } else if s.to_lowercase() == "inprogress" {
+            return Ok(Status::InProgress);
+        } else if s.to_lowercase() == "done" {
+            return Ok(Status::Done);
+        }
+        Err("F".into())
+    }
+}
+
+impl TryFrom<&str> for Status {
+    type Error = String;
+    fn try_from(s: &str) -> Result<Self, Self::Error> {
+        if s.to_lowercase() == "todo" {
+            return Ok(Status::ToDo);
+        } else if s.to_lowercase() == "inprogress" {
+            return Ok(Status::InProgress);
+        } else if s.to_lowercase() == "done" {
+            return Ok(Status::Done);
+        }
+        // } else if s.chars().lower() == ""
+        Err("F".into())
+    }
 }
 
 #[cfg(test)]
